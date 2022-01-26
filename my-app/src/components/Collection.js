@@ -11,7 +11,7 @@ function Collection () {
                 <h1 style={{color:'#7B68EE'}}>Full Collection</h1>
                     <Card>
                         <Card.Title>Card Title</Card.Title>
-                        <img src={''}/>
+                        <Card.Img src={''}/>
                         <Card.Text>$</Card.Text>
                         <Card.Text>Creator: Papa Johnny Wu</Card.Text>
                         <Card.Text>Owner: Joe Byron</Card.Text>
