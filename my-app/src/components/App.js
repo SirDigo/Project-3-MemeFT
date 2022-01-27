@@ -9,7 +9,7 @@ import UploadmemeFT from './UploadmemeFT';
 import './App.css';
 
 function App() {
-    const [memeFT, setMemeFTs] = useState([]);
+    const [memeFTs, setMemeFTs] = useState([]);
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
@@ -29,7 +29,7 @@ function App() {
 //Adding new memeFT from Form
 const uploadMeme = (formData) => {
   
-  fetch("http://localhost:8005/memefts", {
+  fetch("http://localhost:9292/memefts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const uploadMeme = (formData) => {
     body: JSON.stringify(formData),
   })
     .then((response) => response.json())
-    .then((newMeme) => setMemeFTs([...memeFT, newMeme]));
+    .then((newMeme) => setMemeFTs([...memeFTs, newMeme]));
 };
 
 
@@ -59,11 +59,11 @@ const uploadMeme = (formData) => {
         </Route> */}
 
         <Route path='/collection'>
-          <Collection />
+          <Collection memeFTs={memeFTs}/>
         </Route>
 
         <Route path='/meme_curators'>
-          <MemeCurators />
+          <MemeCurators users={users} />
         </Route>
 
         <Route path='/uploadmemeFT'>

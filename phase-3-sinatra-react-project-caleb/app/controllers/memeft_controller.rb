@@ -10,16 +10,17 @@ class MemeftController < ApplicationController
             creator: params[:creator],
             owner: params[:owner],
             for_sale: params[:for_sale],
-            user_id: params[user_id]
+            user_id: params[:user_id],
+            src: params[:src]
         ).to_json
     end
 
-    patch "memefts/:id" do
+    patch "/memefts/:id" do
         memeft = Memeft.find(params[:id])
         memeft.update(
             owner: params[:owner],
             for_sale: params[:for_sale],
             user_id: params[:user_id]
-        )
+        ).to_json
     end
 end
