@@ -1,6 +1,5 @@
 import React from 'react';
-// import { useState, useEffect } from 'react';
-import {  Card, Container } from 'react-bootstrap';
+import {  Card, Container, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Collection ({memeFTs}) {
@@ -8,26 +7,27 @@ function Collection ({memeFTs}) {
 const notForSale = memeFTs.filter(memeFT=> !memeFT.sale)
 
     return(
-
-        <div className='App'>
-            <h1 style={{color:'#7B68EE'}}>Full Collection</h1>
-            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-evenly",alignItems: "center"}}>
-            {notForSale.map((memeFT) => (
-
-            
-            <div key= {memeFT.id}>
-               
-                    <div style={{ width: "400px", height: "400px", padding: "10px", margin: "10px", border: "50px solid green"}}>
-                        <h1>{memeFT.title}</h1>
-                        <img src={memeFT.src} style={{ width: "200px", height: "200px"}} alt={memeFT.title}/>
-                        <p>Price: {memeFT.price}💎</p>
-                        
-                    
-                    </div>
+        <Container>
+            <div className='App'>
+                    <h1 style={{color:'#7FFFD4'}}>Our Collection</h1>
+                    <Row>
+                        {notForSale.map((memeFT) => (
+                            <Card style={{ background: '#ADD8E6', width: "400px", height: "450px", padding: "10px", margin: "10px"}}>
+                                <div key= {memeFT.id}>
+                                    <Card.Title style={{color: '#778899'}}>{memeFT.title}</Card.Title>
+                                    <Card.Img src={memeFT.src} style={{ width: "200px", height: "200px"}} alt={memeFT.title}/>
+                                        <Card style={{background:'#778899', color:'#7FFFD4'}} className = 'm-4' >
+                                            <Card.Text>Price: {memeFT.price} 💎</Card.Text>
+                                            <Card.Text>Owner: {memeFT.owner}</Card.Text>
+                                            <Card.Text>Creator: {memeFT.creator}</Card.Text>
+                                            <Card.Footer>MFT ™️</Card.Footer>
+                                        </Card>
+                                </div>
+                            </Card>
+                        ))}
+                    </Row>
             </div>
-            ))}
-            </div>
-        </div>
+        </Container>
     )
 }
 
