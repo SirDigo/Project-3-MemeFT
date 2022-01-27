@@ -2,6 +2,19 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, Container } from 'react-bootstrap';
 
+
+
+const linkStyles = {
+    display: "inline-block",
+    width: "100px",
+    padding: "12px",
+    margin: "0 6px 6px",
+    background: "black",
+    textDecoration: "none",
+    color: "white",
+    textAlign: "center"
+  };
+
 function NavBar () {
 
     return(
@@ -11,14 +24,7 @@ function NavBar () {
                         <NavLink
                         to='/collection'
                         exact
-                        style={{
-                            display: "inline-block",
-                            width: "66px",
-                            padding: "12px",
-                            margin: "0 6px 6px",
-                            textDecoration: "none",
-                            color: "#B0C4DE",
-                        }}
+                        style={linkStyles}
                         activeStyle={{
                           color: '#7B68EE',
                         }}
@@ -27,34 +33,32 @@ function NavBar () {
                         </NavLink>
 
                         <NavLink
-                        to='/meme_curations'
+                        to='/meme_curators'
                         exact
-                        style={{
-                            display: "inline-block",
-                            width: "98px",
-                            padding: "12px",
-                            margin: "0 6px 6px",
-                            textDecoration: "none",
-                            color: "#B0C4DE",
-                        }}
+                        style={linkStyles}
                         activeStyle={{
                           color: '#7B68EE',
                         }}
                         >
-                            Meme Curations
+                         Curators
                         </NavLink>
+
+                        <NavLink
+                        to='/uploadmemeFT'
+                        exact
+                        style={linkStyles}
+                        activeStyle={{
+                          color: '#7B68EE',
+                        }}
+                        >
+                            MemeFT
+                        </NavLink>
+
 
                         <NavLink
                         to='/store'
                         exact
-                        style={{
-                            display: "inline-block",
-                            width: "66px",
-                            padding: "12px",
-                            margin: "0 6px 6px",
-                            textDecoration: "none",
-                            color: "#B0C4DE",
-                        }}
+                        style={linkStyles}
                         activeStyle={{
                           color: '#7B68EE',
                         }}>
