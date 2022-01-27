@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Collection ({memeFTs}) {
     
-const notForSale = memeFTs.filter(memeFT=> !memeFT.for_sale)
+const notForSale = memeFTs.filter(memeFT=> !memeFT.sale)
 
     return(
 
