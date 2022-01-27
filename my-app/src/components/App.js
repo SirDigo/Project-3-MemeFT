@@ -41,6 +41,18 @@ const uploadMeme = (formData) => {
 };
 
 
+const buyMeme = (random) => {
+  fetch(`http://localhost:9292/memefts/${random.id}`,{
+    method: "PATCH",
+    headers: {
+    "Content-Type": "application/json",
+    },
+    body: JSON.stringify(random),
+})
+.then(resp => resp.json)
+.then(data => setMemeFTs([...memeFTs, data]))
+}
+
 
     // function handleAddBook(newBook) {
     //   const newBookArray = [newBook, ...books];
@@ -74,7 +86,9 @@ const uploadMeme = (formData) => {
         </Route>
 
         <Route path='/store'>
-          <Store memeFTs={memeFTs}/>
+          <Store memeFTs={memeFTs}
+            buyMeme={buyMeme}
+          />
         </Route>
 
       </Switch>
