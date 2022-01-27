@@ -29,7 +29,7 @@ function App() {
 //Adding new memeFT from Form
 const uploadMeme = (formData) => {
   
-  fetch("http://localhost:8005/memeft", {
+  fetch("http://localhost:8005/memefts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

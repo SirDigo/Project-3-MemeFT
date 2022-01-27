@@ -6,9 +6,9 @@ function UploadmemeFT({uploadMeme}) {
   const [formData, setFormData] = useState({
     title: "",
     price: 0,
-    Creator: "",
-    Owner: "",
-    for_sale: false,
+    creator: "",
+    owner: "",
+    for_sale: true,
     user_id: 0,
   });
 
@@ -28,7 +28,7 @@ const onSubmit = (e) => {
         <Form style={{
         display: "flex",
         justifyContent: "center",
-        flexWrap: "nowrap",
+        flexWrap: "wrap",
         textAlign: "center",
         alignItems: "center",
       }}
@@ -61,9 +61,9 @@ const onSubmit = (e) => {
               <div>
                 <label>For Sale: </label>
                 <label>True</label>
-                <input type="checkbox" name="true" placeholder="True" onChange={handleChange}/>
+                <input type="radio" name="for_sale" placeholder="True" value={true} onChange={handleChange}/>
                 <label>False</label>
-                <input type="checkbox" name="false" placeholder="False" onChange={handleChange}/>
+                <input type="radio" name="for_sale" placeholder="False" value={false} onChange={handleChange}/>
               </div>
               <div>
                 <label>User ID </label>
@@ -87,3 +87,9 @@ const onSubmit = (e) => {
 }
 
 export default UploadmemeFT;
+
+
+
+
+      
+   
