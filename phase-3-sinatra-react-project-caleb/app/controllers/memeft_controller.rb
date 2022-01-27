@@ -4,7 +4,7 @@ class MemeftController < ApplicationController
     end
 
     post "/memefts" do
-        Memefts.create(
+        Memeft.create(
             title: params[:title],
             price: params[:price],
             creator: params[:creator],

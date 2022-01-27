@@ -8,6 +8,7 @@ Memeft.destroy_all
 memeGod = User.create(user_name: "MemeGod", about: "You can't beat the value of a NYC Pizza slice.", links: "https://github.com/MemeEngineer")
 nutz = User.create(user_name: "MFTeez Nutz", about: "Jason Botesazan grew up on Long Island, NY and comes from Iranian Jewish background, hes spent a year living in Tel Aviv, Israel, and found his passion for tech which led him to Flatiron, idk do some shit with that haha", links: "https://github.com/jbotesazan")
 sir = User.create(user_name: "Sir. Digo", about: "Mmmm Splended, simply extraordinary.", links: "https://github.com/SirDigo")
+master69=User.create(user_name: "Master69", about: "Secretly part of the Illumanti", links: "https://github.com/")
 
 #MemeFts seeds
 #Memeft.create(title: "", price: , creator: "", owner: "", for_sale: , user_id: , src: "")

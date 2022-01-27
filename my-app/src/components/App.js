@@ -69,11 +69,12 @@ const uploadMeme = (formData) => {
         <Route path='/uploadmemeFT'>
           <UploadmemeFT 
           uploadMeme={uploadMeme}
+          users={users}
           />
         </Route>
 
         <Route path='/store'>
-          <Store />
+          <Store memeFTs={memeFTs}/>
         </Route>
 
       </Switch>
