@@ -17,13 +17,13 @@ ActiveRecord::Schema.define(version: 2022_01_27_014848) do
     t.integer "price"
     t.string "creator"
     t.string "owner"
-    t.boolean "for_sale"
+    t.boolean "sale"
     t.integer "user_id"
     t.string "src"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "user_name"
+    t.string "username"
     t.string "about"
     t.string "links"
   end

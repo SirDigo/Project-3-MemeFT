@@ -5,7 +5,7 @@ class CreateMemefts < ActiveRecord::Migration[6.1]
       t.integer :price
       t.string :creator
       t.string :owner
-      t.boolean :for_sale
+      t.boolean :sale
       t.integer :user_id
     end
   end
