@@ -9,52 +9,31 @@ function MemeCurators ({users}) {
 
 
     return(
+      <div className='App'>
+        <h1 style={{color:'#7B68EE'}}>Meme Curators</h1>
+      {users.map((user) => (
         <IconContext.Provider value={{color: "black", size: "3em"}}>
-        <div className='App'>
+        
             <Container>
-                <h1 style={{color:'#7B68EE'}}>Meme Curations</h1>
                     <Card>
 
 <div>
-<p>Johnny Wu</p>
+<p>{user.username}</p>
         <a
-          href={"https://github.com/MemeEngineer"}
-          title="MemeEngineer"
+          href={user.links}
+          title={user.username}
         >
           {" "}
           <FaGithub/>
         </a>
 </div>
-                    </Card>
-                    <Card>
-<div>
-<p>Caleb Rodriguez</p>
-        <a
-          href={"https://github.com/SirDigo"}
-          title="SirDigo"
-        >
-          {" "}
-          <FaGithub/>
-        </a>
-</div>
-                    </Card>
-                    <Card>
-<div>
-<p>Jason Botesazan</p>
-        <a
-          href={"https://github.com/jbotesazan"}
-          title="jbotesazan"
-        >
-          {" "}
-          <FaGithub/>
-        </a>
-</div>
-                    </Card>
 
-
-            </Container>
-        </div>
+                    </Card>
+                    </Container>
+                    
         </IconContext.Provider>
+        ))}
+        </div>
     )
 }
 
