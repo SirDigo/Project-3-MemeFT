@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2022_01_27_014848) do
     t.string "owner"
     t.boolean "for_sale"
     t.integer "user_id"
-    t.integer "src"
+    t.string "src"
   end
 
   create_table "users", force: :cascade do |t|

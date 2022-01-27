@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {FaGithub} from "react-icons/fa";
 import {IconContext} from "react-icons";
 
-function MemeCurators () {
+function MemeCurators ({users}) {
 
 
     return(
@@ -14,6 +14,7 @@ function MemeCurators () {
             <Container>
                 <h1 style={{color:'#7B68EE'}}>Meme Curations</h1>
                     <Card>
+
 <div>
 <p>Johnny Wu</p>
         <a
