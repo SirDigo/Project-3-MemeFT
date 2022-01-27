@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Card, Form, Container, Image, } from "react-bootstrap";
+import { Button, Card, Form, Container, Row, Col } from "react-bootstrap";
 
 function UploadmemeFT({uploadMeme, users}) {
 
@@ -15,82 +15,51 @@ function UploadmemeFT({uploadMeme, users}) {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-};
+  };
 
-const onSubmit = (e) => {
+  const onSubmit = (e) => {
     console.log("onSubmit triggered");
     e.preventDefault();
     uploadMeme(formData);
     e.target.reset();
   };
+
   return (
-    <div>
-      <Container>
-        <Form style={{
-        display: "flex",
-        justifyContent: "center",
-        flexWrap: "wrap",
-        textAlign: "center",
-        alignItems: "center",
-      }}
-      onSubmit={onSubmit}
-      >
-          <Card>
-              <div>
-                <label>MemeFT Title</label>
-                <input type="text" name="title" placeholder="MemeFT Title" onChange={handleChange}/>
-              </div>
-              <div>
-                <label>Price </label>
-                <input type="integer" name="price" placeholder="Price" onChange={handleChange}/>
-              </div>
+    <div className='App'>
+      <h1 style={{color:'#7FFFD4'}} className='m-5'>Upload a MemeFT</h1>
+        <Container>
+          <Form style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", textAlign: "center", alignItems: "center"}} onSubmit={onSubmit}>
+            <Form.Group >
+              <Form.Label style={{color:'#7FFFD4'}}>MemeFT Title</Form.Label>
+              <Form.Control className='mb-3' type="text" name="title" placeholder="Add Title..." onChange={handleChange}/>
 
-              <div>
-                <label>Creator  </label>
-                <input
-                  type="text"
-                  name="creator"
-                  placeholder="Creator"
-                  onChange={handleChange}
-                />
-              </div>
+              <Form.Label style={{color:'#7FFFD4'}}>Price </Form.Label>
+              <Form.Control className='mb-3' type="integer" name="price" placeholder="Add Price..." onChange={handleChange}/>
 
-              <div>
-                <label>MemeFT Upload </label>
-                <input type="url" name="src" placeholder="MemeFT Image" onChange={handleChange}/>
-              </div>
-              <div>
-                <label>For Sale: </label>
-                <label>True</label>
-                <input type="radio" name="sale" placeholder="True" value={true} onChange={handleChange}/>
-                <label>False</label>
-                <input type="radio" name="sale" placeholder="False" value={false} onChange={handleChange}/>
-              </div>
-              {/* <div>
-                <label>User ID </label>
-                <input
-                  type="integer"
-                  name="user_id"
-                  placeholder="User ID"
-                  onChange={handleChange}
-                />
-              </div> */}
-           
-            <Button className="button" type="submit">
-              Add MemeFT
-            </Button>
-            
-          </Card>
-        </Form>
-      </Container>
+              <Form.Label style={{color:'#7FFFD4'}}>Creator  </Form.Label>
+              <Form.Control className='mb-3' type="text" name="creator" placeholder="Add Creator..." onChange={handleChange}/>
+
+              <Form.Label style={{color:'#7FFFD4'}}>MemeFT Image </Form.Label>
+              <Form.Control className='mb-3' type="url" name="src" placeholder="Add Image..." onChange={handleChange}/>
+
+              <Row>
+                <Form.Label className='mb-3' style={{color:'#7FFFD4'}}>For Sale Status </Form.Label>
+                  <Col>
+                    <Form.Label style={{color:'#7FFFD4'}}>True</Form.Label>
+                    <Form.Check type="radio" name="sale" placeholder="True" value={true} onChange={handleChange}/>
+                  </Col>
+                  <Col>
+                    <Form.Label style={{color:'#7FFFD4'}}>False</Form.Label>
+                    <Form.Check type="radio" name="sale" placeholder="False" value={false} onChange={handleChange}/>
+                  </Col>
+              </Row>
+              <Button variant='secondary' className="button" type="submit" style={{background:'#FFD700', color: '#778899'}}> Upload MFT </Button>
+            </Form.Group>
+          </Form>
+        </Container>
     </div>
   );
 }
 
 export default UploadmemeFT;
-
-
-
-
-      
    

@@ -9,9 +9,9 @@ const linkStyles = {
     width: "100px",
     padding: "12px",
     margin: "0 6px 6px",
-    background: "black",
+    // background: "black",
     textDecoration: "none",
-    color: "white",
+    color: "#7FFFD4",
     textAlign: "center"
   };
 
@@ -26,7 +26,7 @@ function NavBar () {
                         exact
                         style={linkStyles}
                         activeStyle={{
-                          color: '#7B68EE',
+                          color: '#FFD700',
                         }}
                         >
                             Collection
@@ -37,7 +37,7 @@ function NavBar () {
                         exact
                         style={linkStyles}
                         activeStyle={{
-                          color: '#7B68EE',
+                          color: '#FFD700',
                         }}
                         >
                          Curators
@@ -48,7 +48,7 @@ function NavBar () {
                         exact
                         style={linkStyles}
                         activeStyle={{
-                          color: '#7B68EE',
+                          color: '#FFD700',
                         }}
                         >
                             MemeFT
@@ -60,7 +60,7 @@ function NavBar () {
                         exact
                         style={linkStyles}
                         activeStyle={{
-                          color: '#7B68EE',
+                          color: '#FFD700',
                         }}>
                             Store
                         </NavLink>

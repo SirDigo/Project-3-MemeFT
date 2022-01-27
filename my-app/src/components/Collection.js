@@ -14,7 +14,7 @@ const notForSale = memeFTs.filter(memeFT=> !memeFT.sale)
                         {notForSale.map((memeFT) => (
                             <Card style={{ background: '#ADD8E6', width: "400px", height: "450px", padding: "10px", margin: "10px"}}>
                                 <div key= {memeFT.id}>
-                                    <Card.Title style={{color: '#778899'}}>{memeFT.title}</Card.Title>
+                                    <Card.Title style={{color: 'black'}}>{memeFT.title}</Card.Title>
                                     <Card.Img src={memeFT.src} style={{ width: "200px", height: "200px"}} alt={memeFT.title}/>
                                         <Card style={{background:'#778899', color:'#7FFFD4'}} className = 'm-4' >
                                             <Card.Text>Price: {memeFT.price} 💎</Card.Text>
