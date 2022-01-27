@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { Button, Card, Form, Container, Image, } from "react-bootstrap";
 
-function UploadmemeFT({uploadMeme}) {
+function UploadmemeFT({uploadMeme, users}) {
   
   const [formData, setFormData] = useState({
     title: "",
     price: 0,
     creator: "",
-    owner: "",
+    owner: users[3].user_name,
     for_sale: true,
-    user_id: 0,
+    user_id: users[3].id,
+    src: "",
   });
 
   const handleChange = (e) => {
@@ -56,7 +57,7 @@ const onSubmit = (e) => {
 
               <div>
                 <label>MemeFT Upload </label>
-                <input type="url" name="memeFT" placeholder="MemeFT Image" onChange={handleChange}/>
+                <input type="url" name="src" placeholder="MemeFT Image" onChange={handleChange}/>
               </div>
               <div>
                 <label>For Sale: </label>
@@ -65,7 +66,7 @@ const onSubmit = (e) => {
                 <label>False</label>
                 <input type="radio" name="for_sale" placeholder="False" value={false} onChange={handleChange}/>
               </div>
-              <div>
+              {/* <div>
                 <label>User ID </label>
                 <input
                   type="integer"
@@ -73,7 +74,7 @@ const onSubmit = (e) => {
                   placeholder="User ID"
                   onChange={handleChange}
                 />
-              </div>
+              </div> */}
            
             <Button className="button" type="submit">
               Add MemeFT

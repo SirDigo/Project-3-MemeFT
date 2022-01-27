@@ -5,12 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Collection ({memeFTs}) {
     
+const notForSale = memeFTs.filter(memeFT=> !memeFT.for_sale)
+
     return(
 
         <div className='App'>
             <h1 style={{color:'#7B68EE'}}>Full Collection</h1>
             <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-evenly",alignItems: "center"}}>
-            {memeFTs.map((memeFT) => (
+            {notForSale.map((memeFT) => (
 
             
             <div key= {memeFT.id}>
