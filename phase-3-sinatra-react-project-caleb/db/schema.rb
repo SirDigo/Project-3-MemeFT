@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_25_211120) do
+ActiveRecord::Schema.define(version: 2022_01_27_014848) do
 
   create_table "memefts", force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2022_01_25_211120) do
     t.string "owner"
     t.boolean "for_sale"
     t.integer "user_id"
+    t.integer "src"
   end
 
   create_table "users", force: :cascade do |t|
