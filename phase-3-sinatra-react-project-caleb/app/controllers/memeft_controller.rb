@@ -9,7 +9,7 @@ class MemeftController < ApplicationController
             price: params[:price],
             creator: params[:creator],
             owner: params[:owner],
-            for_sale: params[:for_sale],
+            sale: params[:sale],
             user_id: params[:user_id],
             src: params[:src]
         ).to_json
@@ -19,7 +19,7 @@ class MemeftController < ApplicationController
         memeft = Memeft.find(params[:id])
         memeft.update(
             owner: params[:owner],
-            for_sale: params[:for_sale],
+            sale: params[:sale],
             user_id: params[:user_id]
         ).to_json
     end

@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { Button, Card, Form, Container, Image, } from "react-bootstrap";
 
 function UploadmemeFT({uploadMeme, users}) {
-  
+
   const [formData, setFormData] = useState({
     title: "",
     price: 0,
     creator: "",
-    owner: users[3].user_name,
-    for_sale: true,
+    owner: users[3].username,
+    sale: true,
     user_id: users[3].id,
     src: "",
   });
@@ -62,9 +62,9 @@ const onSubmit = (e) => {
               <div>
                 <label>For Sale: </label>
                 <label>True</label>
-                <input type="radio" name="for_sale" placeholder="True" value={true} onChange={handleChange}/>
+                <input type="radio" name="sale" placeholder="True" value={true} onChange={handleChange}/>
                 <label>False</label>
-                <input type="radio" name="for_sale" placeholder="False" value={false} onChange={handleChange}/>
+                <input type="radio" name="sale" placeholder="False" value={false} onChange={handleChange}/>
               </div>
               {/* <div>
                 <label>User ID </label>
