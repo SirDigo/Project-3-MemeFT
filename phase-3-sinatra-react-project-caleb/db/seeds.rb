@@ -6,7 +6,7 @@ Memeft.destroy_all
 #User.create(user_name: "", about: "", links: "")
 
 memeGod = User.create(username: "MemeGod", about: "You can't beat the value of a NYC Pizza slice.", links: "https://github.com/MemeEngineer")
-nutz = User.create(username: "MFTeez Nutz", about: "Jason Botesazan grew up on Long Island, NY and comes from Iranian Jewish background, hes spent a year living in Tel Aviv, Israel, and found his passion for tech which led him to Flatiron, idk do some shit with that haha", links: "https://github.com/jbotesazan")
+nutz = User.create(username: "MFTeez Nutz", about: "Tough time don\'t last, only tough people", links: "https://github.com/jbotesazan")
 sir = User.create(username: "Sir. Digo", about: "Mmmm Splended, simply extraordinary.", links: "https://github.com/SirDigo")
 master69=User.create(username: "Master69", about: "Secretly part of the Illumanti", links: "https://github.com/")
 
