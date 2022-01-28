@@ -27,7 +27,7 @@ function App() {
     },[])
 
 //Adding new memeFT from Form
-const uploadMeme = (formData) => {
+  const uploadMeme = (formData) => {
   
   fetch("http://localhost:9292/memefts", {
     method: "POST",
@@ -38,26 +38,36 @@ const uploadMeme = (formData) => {
   })
     .then((response) => response.json())
     .then((newMeme) => setMemeFTs([...memeFTs, newMeme]));
-};
+  };
 
 
-const buyMeme = (random) => {
-  fetch(`http://localhost:9292/memefts/${random.id}`,{
-    method: "PATCH",
-    headers: {
-    "Content-Type": "application/json",
-    },
-    body: JSON.stringify(random),
-})
-.then(resp => resp.json)
-.then(data => setMemeFTs([...memeFTs, data]))
-}
+  function handleMemes (data) {
+    const newMemes = memeFTs.map((meme) => {
+      if (meme.id === data.id) {
+        meme.sale = false
+        meme.owner = "Master69"
+        meme.user_id = 3
+      } else {
+        return meme
+      }})
+      setMemeFTs(newMemes)
+  }
 
+  const buyMeme = (random) => {
 
-    // function handleAddBook(newBook) {
-    //   const newBookArray = [newBook, ...books];
-    //   setBooks(newBookArray)
-    // }
+    fetch(`http://localhost:9292/memefts/${random.id}`,{
+      method: "PATCH",
+      headers: {
+      "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        sale: random.sale
+      }),
+    })
+    .then(resp => resp.json())
+    .then(data => handleMemes(data))
+    }
+
 
   return (
     <div>
@@ -65,10 +75,6 @@ const buyMeme = (random) => {
       <NavBar />
 
       <Switch>
-
-        {/* <Route path='/books/:id'>
-          <Descriptions handleAddBook={handleAddBook} />
-        </Route> */}
 
         <Route path='/collection'>
           <Collection memeFTs={memeFTs}/>
