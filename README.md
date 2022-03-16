@@ -1,10 +1,10 @@
 # Project-3-MemeFT
 
-frontend
+### Frontend Sartup
 cd my-app
 npm start
 
-backend
+### Backend Startup
 cd phase-3-sinatra-react-project-caleb
 rake server
 
